@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 
 import java.util.Random;
 
@@ -32,10 +33,26 @@ public class MainActivity extends AppCompatActivity {
 
     public void opcaoSelecionada(String opçãoSelecionada){
 
+        ImageView ImageResultado = findViewById(R.id.imageResult);
+
         int numero = new Random().nextInt(3);
 
         String[] opcoes = {"pedra", "papel", "tesoura"};
         String opApp = opcoes[numero];
+
+        switch (opApp){
+            case "pedra":
+                ImageResultado.setImageResource(R.drawable.pedra);
+                break;
+
+            case "papel":
+                ImageResultado.setImageResource(R.drawable.papel);
+                break;
+
+            case "tesoura":
+                ImageResultado.setImageResource(R.drawable.tesoura);
+                break;
+        }
 
         System.out.println("item clicado:" + numero);
     }
