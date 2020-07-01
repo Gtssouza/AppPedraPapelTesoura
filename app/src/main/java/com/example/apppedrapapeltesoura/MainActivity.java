@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
+import java.util.Random;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -15,20 +17,26 @@ public class MainActivity extends AppCompatActivity {
 
     public void selecionadoPedra(View view){
         System.out.println("Opção Pedra selecionada");
-        this.opcaoSelecionada(1);
+        this.opcaoSelecionada("pedra");
     }
 
     public void selecionadoPapel(View view){
         System.out.println("Opção Papel selecionada");
-        this.opcaoSelecionada(2);
+        this.opcaoSelecionada("papel");
     }
 
     public void selecionadoTesoura(View view){
         System.out.println("Opção Tesoura selecionada");
-        this.opcaoSelecionada(3);
+        this.opcaoSelecionada("tesoura");
     }
 
-    public void opcaoSelecionada(int opçãoSelecionada){
-        System.out.println(opçãoSelecionada);
+    public void opcaoSelecionada(String opçãoSelecionada){
+
+        int numero = new Random().nextInt(3);
+
+        String[] opcoes = {"pedra", "papel", "tesoura"};
+        String opApp = opcoes[numero];
+
+        System.out.println("item clicado:" + numero);
     }
 }
